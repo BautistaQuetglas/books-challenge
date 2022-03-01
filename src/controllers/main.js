@@ -78,12 +78,12 @@ const mainController = {
         if (resultado.length == 0){
             res.render("login", {
                 errors:{
-                    email: {msg: "El email no corresponde a un usuario registrado" }}, 
+                    email: {msg: "El email no esta registrado" }}, 
                     oldData : req.body}
               )
         }else{
-            let PassCheck = bcryptjs.compareSync(req.body.password, resultado[0].dataValues.password);
-            if(PassCheck == true){
+            let CheckPassowrd = bcryptjs.compareSync(req.body.password, resultado[0].dataValues.password);
+            if(CheckPassowrd == true){
                 let loggedUser = resultado[0].dataValues;
                 delete loggedUser.Pass;
                 req.session.loggedUser = loggedUser;
