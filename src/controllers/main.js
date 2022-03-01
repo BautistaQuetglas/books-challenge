@@ -26,6 +26,10 @@ const mainController = {
   },
   bookSearchResult: (req, res) => {
     // Implement search by title
+    db.Results.findAll('Title')
+    .then((Results)) => {
+      console.log(Results);
+    });
     res.render('search');
   },
   deleteBook: (req, res) => {
@@ -49,6 +53,10 @@ const mainController = {
   },
   authorBooks: (req, res) => {
     // Implement books by author
+    db.Author.findbyPk('Authors')
+    .then((Author) => {
+      console.log(Author);
+    });
     res.render('authorBooks');
   },
   register: (req, res) => {
