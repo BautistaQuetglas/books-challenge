@@ -106,7 +106,7 @@ const mainController = {
                 }
                 
             }else{
-                return res.render("login", {errors:{Pass: {msg: "La contraseña no es correcta"}}});
+                return res.render("login", {errors:{Pass: {msg: "La contraseña es incorrecta"}}});
                     };
             };
         }
